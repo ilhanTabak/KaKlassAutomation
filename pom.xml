@@ -23,9 +23,8 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.5.3</version>
+            <version>5.3.1</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -47,12 +46,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
                 <configuration>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>Alphabetical</runOrder>
                     <!--<rerunFailingTestsCount>1</rerunFailingTestsCount>-->
                     <includes>
-                        <include>/*CukesRunner.java</include>
-                        <include>/FailedTestRunner.java</include>
+                        <include>**/*CukesRunner.java</include>
+                        <include>**/*FailedTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -72,7 +73,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber.json</param>
+                                <param>**/cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
@@ -81,6 +82,4 @@
         </plugins>
     </build>
 
-
 </project>
-
