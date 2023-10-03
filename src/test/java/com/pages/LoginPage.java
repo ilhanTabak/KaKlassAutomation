@@ -3,6 +3,7 @@ package com.pages;
 import com.utilities.BrowserUtils;
 import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,9 +32,12 @@ public class LoginPage extends BasePage {
     @FindBy(css = "[id='LoginBtn']")
     public WebElement submit;
 
+    @FindBy(css = "[title='Mein Konto']")
+    public WebElement meinKonto;
+
 
     public void loginMethod(){
-
+        BrowserUtils.waitFor(2);
       acceptButton.click();
         BrowserUtils.waitFor(2);
        userBox.click();
@@ -48,6 +52,9 @@ public class LoginPage extends BasePage {
         password.sendKeys(ConfigurationReader.get("password"));
         BrowserUtils.waitFor(2);
         submit.click();
+       //------------------------------------------------------------
+
+        Assert.assertEquals("Mein Konto",meinKonto.getText());
 
 
 

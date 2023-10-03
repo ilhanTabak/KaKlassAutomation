@@ -18,7 +18,7 @@ public class Login_step_def {
 
         @Given("The user on the login page")
         public void the_user_on_the_login_page() {
-                Driver.get().get(ConfigurationReader.get("url"));
+                //Driver.get().get(ConfigurationReader.get("url"));
         }
 
         @When("The user enter valid credentials")
@@ -29,6 +29,9 @@ public class Login_step_def {
 
         @Then("The user can log in")
         public void the_user_can_log_in() {
+
+
+
 
         }
 
