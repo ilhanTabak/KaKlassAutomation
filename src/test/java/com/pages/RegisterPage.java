@@ -31,13 +31,19 @@ public class RegisterPage extends BasePage{
     public WebElement eMail;
 
     @FindBy(css = "[id='Password']")
-    public WebElement PasswordRegister;
+    public WebElement passwordRegister;
 
     @FindBy(css = "[id='ConfirmPassword']")
     public WebElement confirmPassword;
 
     @FindBy(xpath = "//*[@id='T1']/div[6]/div/label/span[1]")
     public WebElement stimmeClick;
+
+    @FindBy(css = "[id='LoginBtn']")
+    public WebElement registerButton;
+
+    @FindBy(xpath = "//*[@id='cartWrapper']/div/div/div/div[3]")
+    public WebElement RegisterText;
 
 
 
@@ -51,17 +57,51 @@ public class RegisterPage extends BasePage{
         anmeldung.click();
         driver= Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,200);");
+        js.executeScript("window.scrollBy(0,400);");
         firstName.sendKeys("Soft");
         lastName.sendKeys("Skill");
         int randomNummer = randomSayi();
         eMail.sendKeys("abc" + randomNummer + "@gmail.com");
+        passwordRegister.sendKeys("Test1234");
+       confirmPassword.sendKeys("Test1234");
+       stimmeClick.click();
+       registerButton.click();
 
 
     }
     public int randomSayi() {
         int randomNummer2 = randomNum2.nextInt(10000);
         return randomNummer2;
+    }
+
+    public void registerNegative(String firstname,String lastname,String email,String password){
+
+
+        loginpage.acceptButton.click();
+
+        loginpage.userBox.click();
+
+        anmeldung.click();
+
+        driver= Driver.get();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,400);");
+
+        firstName.sendKeys(firstname);
+
+        lastName.sendKeys(lastname);
+
+
+        eMail.sendKeys(email);
+
+        passwordRegister.sendKeys(password);
+
+        confirmPassword.sendKeys(password);
+
+        stimmeClick.click();
+
+        registerButton.click();
+
     }
 
 
