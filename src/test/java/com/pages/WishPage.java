@@ -1,4 +1,4 @@
 package com.pages;
 
-public class WishPage extends BasePage {
+public class WishPage extends{
 }
