@@ -5,16 +5,20 @@ Feature:Register Funktion
     When The user enter valid credential
     Then The user can make register
 
-  @wip
+
   Scenario Outline: The user can not make register with invalid credentials
     Given The user on the register page
-    When The user enter invalid  "<firstName>","<lastName>","<eMail>","<password>" credential
-    Then The user can not make register
+    When The user enter invalid  "<firstName>","<lastName>","<eMail>","<password1>","<password2>" credential
+    Then The user can not make register and see "<warnung>" message
     Examples:
-      | firstName | lastName | eMail             | password |
-      |           | Stone    | abc1234@gmail.com | Test1234 |
-      |   Jack    |          | abc1235@gmail.com | Test1234 |
-      |   Jack    | Stone    | abc1236gmail.com  | Test1234 |
+      | firstName | lastName | eMail             | password1 | password2 | warnung        |
+      |           | Stone    | abc1234@gmail.com | Test1234  | Test1234  | obligatorisch! |
+      | Jack      |          | abc1235@gmail.com | Test1234  | Test1234  | obligatorisch! |
+      | Jack      | Stone    |                   | Test1234  | Test1234  | required       |
+      | Jack      | Stone    | abc1234@gmail.com |           | Test1234  | erforderlich   |
+      | Jack      | Stone    | abc1234@gmail.com | Test1234  |           | erforderlich   |
+
+
 
 
 
