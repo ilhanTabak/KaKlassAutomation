@@ -45,6 +45,9 @@ public class RegisterPage extends BasePage{
     @FindBy(xpath = "//*[@id='cartWrapper']/div/div/div/div[3]")
     public WebElement RegisterText;
 
+    @FindBy(css = "[class='field-validation-error']")
+    public WebElement warnungObligatorisch;
+
 
 
     public void registerPageMethod(){
@@ -74,35 +77,23 @@ public class RegisterPage extends BasePage{
         return randomNummer2;
     }
 
-    public void registerNegative(String firstname,String lastname,String email,String password){
-
-
+    public void registerNegative(String firstname,String lastname,String email,String password1,String password2){
         loginpage.acceptButton.click();
-
         loginpage.userBox.click();
-
         anmeldung.click();
-
         driver= Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,400);");
-
         firstName.sendKeys(firstname);
-
         lastName.sendKeys(lastname);
-
-
         eMail.sendKeys(email);
-
-        passwordRegister.sendKeys(password);
-
-        confirmPassword.sendKeys(password);
-
+        passwordRegister.sendKeys(password1);
+        confirmPassword.sendKeys(password2);
         stimmeClick.click();
-
         registerButton.click();
-
     }
+
+
 
 
 
