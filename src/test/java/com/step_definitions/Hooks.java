@@ -17,7 +17,7 @@ public class Hooks {
     @After
     public void tearDown(){
         //System.out.println("\tThis is coming from after method");
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
 //    @Before("@db")
