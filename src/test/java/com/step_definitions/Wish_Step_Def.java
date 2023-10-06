@@ -14,7 +14,6 @@ public class Wish_Step_Def {
     public void the_user_on_the_all_product_page() {
         wishPage.alleProdukte.click();
 
-
     }
 
     @When("The user select a products wish button")
@@ -26,6 +25,13 @@ public class Wish_Step_Def {
 
     @Then("The user see produkt in the wish list")
     public void the_user_see_produkt_in_the_wish_list() {
+        Assert.assertTrue(wishPage.emptyText.getText().contains("empty!"));
+    }
+
+
+    //-------------------------------------------------------------------------
+    @Then("The user can delete a product from wis")
+    public void theUserCanDeleteAProductFromWis() {
         Assert.assertTrue(wishPage.emptyText.getText().contains("empty!"));
 
     }
