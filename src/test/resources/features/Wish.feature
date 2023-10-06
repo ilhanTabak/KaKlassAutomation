@@ -1,5 +1,4 @@
-
-
+@B7KCLS-104
 Feature: Wish List
 
   Background:
@@ -13,7 +12,7 @@ Feature: Wish List
     Scenario: The user delete products from wish list
       Given The user on the all product page
       When The user select a products wish button
-      Then The user can delete a product from wis
+      Then The user can delete a product from wish list
 
 
 

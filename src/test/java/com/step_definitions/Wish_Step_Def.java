@@ -30,8 +30,8 @@ public class Wish_Step_Def {
 
 
     //-------------------------------------------------------------------------
-    @Then("The user can delete a product from wis")
-    public void theUserCanDeleteAProductFromWis() {
+    @Then("The user can delete a product from wish list")
+    public void theUserCanDeleteAProductFromWishList() {
         Assert.assertTrue(wishPage.emptyText.getText().contains("empty!"));
 
     }
