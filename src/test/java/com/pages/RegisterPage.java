@@ -2,6 +2,7 @@ package com.pages;
 
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -69,7 +70,6 @@ public class RegisterPage extends BasePage{
        confirmPassword.sendKeys("Test1234");
        stimmeClick.click();
        registerButton.click();
-
 
     }
     public int randomSayi() {
