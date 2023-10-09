@@ -19,8 +19,6 @@ public class CartIcon_Stepdefs {
        cartPage.chooseeaddcheck();
     }
 
-
-
     @Then("check card icon")
     public void checkCardIcon() {
         cartPage.msg();
