@@ -3,7 +3,6 @@ package com.pages;
 import com.utilities.BrowserUtils;
 import com.utilities.ConfigurationReader;
 import com.utilities.Driver;
-import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,15 +23,18 @@ public class LoginPage extends BasePage {
     public WebElement password;
     @FindBy(css = "[id='LoginBtn']")
     public WebElement anmeldenButton;
-    @FindBy(css = "[title='Mein Konto']")
+    @FindBy(css = "[title='My Account']")
     public WebElement meinKonto;
 
+    //Aşağıdaki web element Pasaport veya Şifre yanlış girildiğinde hata vermediğinden hala Login olunmadığını
+    //kanıtlamak için!!! Eğer logoutButton var ise zaten login olunmuştur.
+    @FindBy(xpath="//*[@id=\"userBox\"]/div/div[2]/a[3]")
+    public WebElement logoutButton;
+
     public void loginMethod() {
-        BrowserUtils.waitFor(2);
         acceptButton.click();
-        BrowserUtils.waitFor(2);
         userBox.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
         anmelden.click();
 
         driver = Driver.get();
@@ -41,9 +43,25 @@ public class LoginPage extends BasePage {
 
         userName.sendKeys(ConfigurationReader.get("loginEmail"));
         password.sendKeys(ConfigurationReader.get("loginPassword"));
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
         anmeldenButton.click();
 
-        Assert.assertEquals("Mein Konto", meinKonto.getText());
+
+        loginVerification();
+    }
+    public void loginNegativTest(String Email, String Password){
+        userName.sendKeys(Email);
+        password.sendKeys(Password);
+        BrowserUtils.waitFor(1);
+        anmeldenButton.click();
+    }
+    public void loginVerification(){
+        userBox.click();
+        BrowserUtils.verifyElementDisplayed(logoutButton);
+    }
+    public void loginErrorMessage(){
+        userBox.click();
+        BrowserUtils.verifyElementDisplayed(logoutButton);
+
     }
 }

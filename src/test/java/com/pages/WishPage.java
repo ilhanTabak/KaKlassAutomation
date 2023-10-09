@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class WishPage extends BasePage{
 
 
-    WishPage wishPage=new WishPage();
+
 
    @FindBy(css = "[id='64d943d5db5ea1d2fa4aa00f-menu']")
     public WebElement alleProdukte;
@@ -24,8 +24,8 @@ public class WishPage extends BasePage{
    public void wishMethod(){
 
 
-       wishPage.schuheWishButton.click();
-       wishPage.heartButton.click();
+       schuheWishButton.click();
+      heartButton.click();
 
 
    }
