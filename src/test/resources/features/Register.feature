@@ -1,4 +1,6 @@
-Feature:Register Funktion
+
+@B7KCLS-105
+Feature:As a user I should be able to register on the website
 
   Scenario: The user can make register with valid credentials
     Given The user on the register page

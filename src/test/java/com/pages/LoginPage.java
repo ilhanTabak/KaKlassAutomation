@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
     public WebElement password;
     @FindBy(css = "[id='LoginBtn']")
     public WebElement anmeldenButton;
-    @FindBy(css = "[title='Mein Konto']")
+    @FindBy(css = "[title='My Account']")
     public WebElement meinKonto;
 
     public void loginMethod() {
@@ -44,6 +44,7 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitFor(2);
         anmeldenButton.click();
 
-        Assert.assertEquals("Mein Konto", meinKonto.getText());
+       Assert.assertEquals("My Account", meinKonto.getText());
+
     }
 }
