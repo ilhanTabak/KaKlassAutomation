@@ -34,7 +34,7 @@ public class CartIcon_Stepdefs {
 
     @And("Check the cart page")
     public void checkTheCartPage() {
-cartPage.cartviewText();
+        cartPage.cartviewText();
     }
 
     @Then("Click to Checkout")

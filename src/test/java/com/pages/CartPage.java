@@ -29,9 +29,9 @@ public class CartPage extends BasePage {
     @FindBy(css = "[class='fl col-12 text-center SubTitle']")
     public WebElement CartIcon_TextVerify;
     @FindBy(css = "[class='btn btn-go']")
-    public WebElement  zu_kaufskorb_gehen;
+    public WebElement zu_kaufskorb_gehen;
     @FindBy(css = "[onclick='DeleteShopItem(this);']")
-    public WebElement  Remove;
+    public WebElement Remove;
 
 
     public void clickAlleProduckt() {
@@ -83,7 +83,8 @@ public class CartPage extends BasePage {
         BrowserUtils.waitFor(2);
 
     }
-    public void complete_Checkout(){
+
+    public void complete_Checkout() {
         zu_kaufskorb_gehen.click();
         Remove.click();
         Remove.click();
