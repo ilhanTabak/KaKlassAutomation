@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     public WebElement password;
     @FindBy(css = "[id='LoginBtn']")
     public WebElement anmeldenButton;
-    @FindBy(css = "[title='Mein Konto']")
+    @FindBy(css = "[title='My Account']")
     public WebElement meinKonto;
 
     //Aşağıdaki web element Pasaport veya Şifre yanlış girildiğinde hata vermediğinden hala Login olunmadığını
@@ -46,6 +46,7 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitFor(1);
         anmeldenButton.click();
 
+
         loginVerification();
     }
     public void loginNegativTest(String Email, String Password){
@@ -61,5 +62,6 @@ public class LoginPage extends BasePage {
     public void loginErrorMessage(){
         userBox.click();
         BrowserUtils.verifyElementDisplayed(logoutButton);
+
     }
 }
