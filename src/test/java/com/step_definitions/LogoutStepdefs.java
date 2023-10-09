@@ -13,10 +13,7 @@ public class LogoutStepdefs {
         logoutPage.hoverover();
     }
 
-    @When("Click on the Log out")
-    public void clickOnTheLogOut() {
-        logoutPage.LogOut();
-    }
+
 
     @Then("Verify that you are logged out")
     public void verifyThatYouAreLoggedOut() {
