@@ -12,6 +12,7 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.get(), this);
     }
 
+
     }
 
 
