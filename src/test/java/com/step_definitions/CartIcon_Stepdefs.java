@@ -19,14 +19,11 @@ public class CartIcon_Stepdefs {
        cartPage.chooseeaddcheck();
     }
 
-    @Then("add to card")
-    public void addToCard() {
-        cartPage.chooseeaddcheck();
-    }
+
 
     @Then("check card icon")
     public void checkCardIcon() {
         cartPage.msg();
-        logoutPage.LogOut();
+
     }
 }

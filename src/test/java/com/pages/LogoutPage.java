@@ -19,10 +19,7 @@ public class LogoutPage extends BasePage {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(My_Account).perform();
     }
-    public void LogOut() {
-        BrowserUtils.waitFor(2);
-        LogOut.click();
-    }
+
     public void msg() {
         String Verifiymsg = AnmeldeButton.getText();
         String ExpectedText = "Anmelden";
