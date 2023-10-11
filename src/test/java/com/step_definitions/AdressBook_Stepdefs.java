@@ -44,8 +44,6 @@ public class AdressBook_Stepdefs {
         WebDriver driver = Driver.get();
         Alert alert = driver.switchTo().alert();
         alert.accept();
-
-
     }
 }
 
