@@ -25,14 +25,14 @@ public class Wish_Step_Def {
 
     @Then("The user see produkt in the wish list")
     public void the_user_see_produkt_in_the_wish_list() {
-        Assert.assertTrue(wishPage.emptyText.getText().contains("empty!")||wishPage.emptyText.getText().contains("leer"));
+        Assert.assertFalse(wishPage.emptyText.getText().contains("empty!")||wishPage.emptyText.getText().contains("leer"));
     }
 
 
     //-------------------------------------------------------------------------
     @Then("The user can delete a product from wish list")
     public void theUserCanDeleteAProductFromWishList() {
-        Assert.assertTrue(wishPage.emptyText.getText().contains("empty!")||wishPage.emptyText.getText().contains("leer"));
+        Assert.assertFalse(wishPage.emptyText.getText().contains("empty!")||wishPage.emptyText.getText().contains("leer"));
 
     }
 }

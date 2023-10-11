@@ -1,3 +1,4 @@
+@smoke
 @loginTest
 Feature: User Login Functionality - I should be able to login with valid credential
 

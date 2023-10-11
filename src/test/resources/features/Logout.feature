@@ -1,3 +1,4 @@
+@smoke
 @B7KCLS-112
 Feature: User Log out Functionality - I should be able to log out
 
