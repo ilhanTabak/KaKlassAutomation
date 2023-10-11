@@ -7,9 +7,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 public class CartPage extends BasePage {
 
+    
     WebDriver driver;
     @FindBy(xpath = "//a[@id=\"64d943d5db5ea1d2fa4aa00f-menu\"]")
     public WebElement Alle_Produkte;
