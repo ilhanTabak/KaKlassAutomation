@@ -41,6 +41,11 @@ public class CartPage extends BasePage {
 
     public void chooseeaddcheck() {
 
+
+
+
+
+        
         driver = Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,700);");
