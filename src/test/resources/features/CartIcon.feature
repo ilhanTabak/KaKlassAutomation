@@ -1,4 +1,4 @@
-
+@smoke
 @bayram
 Feature: As a user, I should be able to manage the cart by clicking the cart icon
 

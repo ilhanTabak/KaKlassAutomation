@@ -1,3 +1,4 @@
+@smoke
 @ilhan
 @B7KCLS-105
 Feature:As a user I should be able to register on the website

@@ -1,4 +1,4 @@
-
+@smoke
 @ilhan
 @B7KCLS-104
 Feature: Wish List

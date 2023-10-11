@@ -1,3 +1,4 @@
+@smoke
 @ilhan
 @B7KCLS-110
 Feature: Wish list modifiy
