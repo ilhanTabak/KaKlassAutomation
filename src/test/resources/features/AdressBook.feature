@@ -13,5 +13,3 @@ Feature: As a user, I should be able to update the address information by clicki
     Examples:
       | EMail              | Name  | LastName | Adress     | Phone    | ZipCode | Verify_Message |
       | Gulnihal@gmail.com | Aydan | Koch     | Bredenborn | 16012345 | 376     | Aydan Koch     |
-
-
