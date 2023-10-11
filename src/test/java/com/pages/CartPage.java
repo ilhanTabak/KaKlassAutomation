@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends BasePage {
 
+    
     WebDriver driver;
     @FindBy(xpath = "//a[@id=\"64d943d5db5ea1d2fa4aa00f-menu\"]")
     public WebElement Alle_Produkte;
@@ -40,6 +41,11 @@ public class CartPage extends BasePage {
 
     public void chooseeaddcheck() {
 
+
+
+
+
+        
         driver = Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,700);");
