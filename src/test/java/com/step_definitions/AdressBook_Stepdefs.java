@@ -29,20 +29,23 @@ public class AdressBook_Stepdefs {
     public void clickTheAddNewButton() {
         adressBookPage.Add_New_Adress.click();
     }
+
     @Then("The user enter valid new Address Book credential {string}, {string},{string},{string},{string},{string},")
-    public void theUserEnterValidNewAddressBookCredential(String EMail, String Name, String LastName,  String Adress, String Phone, String ZipCode){
-        adressBookPage.newaddressadd(EMail, Name, LastName,  Adress, Phone, ZipCode);}
+    public void theUserEnterValidNewAddressBookCredential(String EMail, String Name, String LastName, String Adress, String Phone, String ZipCode) {
+        adressBookPage.newaddressadd(EMail, Name, LastName, Adress, Phone, ZipCode);
+    }
 
     @And("The user should be see {string},")
-    public void  theUserShouldBeSee(String Verify_Message) {
+    public void theUserShouldBeSee(String Verify_Message) {
 
-         Assert.assertEquals(adressBookPage.VerifyMsg.getText(),Verify_Message);
-         adressBookPage.Delete.click();
+        Assert.assertEquals(adressBookPage.VerifyMsg.getText(), Verify_Message);
+        adressBookPage.Delete.click();
         BrowserUtils.waitFor(2);
         WebDriver driver = Driver.get();
-        Alert alert=driver.switchTo().alert();
+        Alert alert = driver.switchTo().alert();
         alert.accept();
-    }}
+    }
+}
 
 
 
