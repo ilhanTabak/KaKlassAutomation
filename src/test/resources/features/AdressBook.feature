@@ -1,3 +1,5 @@
+@smoke
+
 Feature: As a user, I should be able to update the address information by clicking the Address Book tab under the My Account module.
 
   Scenario: Login with username and password (!! This Scenario is for common usage !!)

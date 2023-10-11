@@ -1,3 +1,4 @@
+@smoke
 Feature: As a user, I should be able to update the user information by clicking the Edit Account tab under the My Account module
 
   Scenario: Login with username and password (!! This Scenario is for common usage !!)
