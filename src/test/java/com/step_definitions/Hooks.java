@@ -19,9 +19,13 @@ public class Hooks {
     public void tearDown() {
         //System.out.println("\tThis is coming from after method");
 
+     Driver.closeDriver();
 
 
-      Driver.closeDriver();
+
+
+
+
 
     }
 
