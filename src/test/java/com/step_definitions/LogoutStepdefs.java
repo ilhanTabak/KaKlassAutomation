@@ -25,4 +25,9 @@ public class LogoutStepdefs {
     public void clickBackToPageIconInBrowser() {
         logoutPage.navigateback();
     }
+
+    @When("Click on the Log out")
+    public void clickOnTheLogOut() {
+        logoutPage.logOut();
+    }
 }
