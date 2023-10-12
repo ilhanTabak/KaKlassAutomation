@@ -3,6 +3,7 @@ package com.pages;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -18,15 +19,19 @@ public class LogoutPage extends BasePage {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(My_Account).perform();
     }
-    public void LogOut() {
-        BrowserUtils.waitFor(2);
+    public void logOut(){
         LogOut.click();
     }
+
     public void msg() {
         String Verifiymsg = AnmeldeButton.getText();
         String ExpectedText = "Anmelden";
         BrowserUtils.waitFor(2);
         Assert.assertEquals(Verifiymsg, "Anmelden");
         Assert.assertTrue(ExpectedText.contains(Verifiymsg));
+    }
+    public void navigateback(){
+
+        Driver.get().navigate().back();
     }
 }

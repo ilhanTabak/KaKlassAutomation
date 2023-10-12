@@ -1,4 +1,5 @@
 @B7KCLS-106
+
 Feature: User Login Functionality - I should be able to login with valid credential
 
   Scenario: Login with username and password (!! This Scenario is for common usage !!)
