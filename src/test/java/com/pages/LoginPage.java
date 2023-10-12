@@ -46,7 +46,6 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitFor(1);
         anmeldenButton.click();
 
-
         loginVerification();
     }
     public void loginNegativTest(String Email, String Password){
@@ -60,8 +59,8 @@ public class LoginPage extends BasePage {
         BrowserUtils.verifyElementDisplayed(logoutButton);
     }
     public void loginErrorMessage(){
-        userBox.click();
-        BrowserUtils.verifyElementDisplayed(logoutButton);
-
+        //Eğer Password giriş kutusu görünüyorsa login olunmamış demektir.
+        //Error mesaj hiçbir şekilde alınmıyor.
+        BrowserUtils.verifyElementDisplayed(password);
     }
 }
