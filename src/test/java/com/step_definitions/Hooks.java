@@ -9,15 +9,24 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     @Before  //JAVA
-    public void setUp(){
+    public void setUp() {
         Driver.get().get(ConfigurationReader.get("url"));
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         //System.out.println("\tThis is coming from after method");
+
      Driver.closeDriver();
+
+
+
+
+
+
+
     }
 
 //    @Before("@db")

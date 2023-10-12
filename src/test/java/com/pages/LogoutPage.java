@@ -3,7 +3,6 @@ package com.pages;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -15,11 +14,13 @@ public class LogoutPage extends BasePage {
     public WebElement LogOut;
     @FindBy(xpath = "//a[@href=\"/login\"]")
     public WebElement AnmeldeButton;
+
     public void hoverover() {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(My_Account).perform();
     }
-    public void logOut(){
+
+    public void logOut() {
         LogOut.click();
     }
 
@@ -30,8 +31,8 @@ public class LogoutPage extends BasePage {
         Assert.assertEquals(Verifiymsg, "Anmelden");
         Assert.assertTrue(ExpectedText.contains(Verifiymsg));
     }
-    public void navigateback(){
 
+    public void navigateback() {
         Driver.get().navigate().back();
     }
 }

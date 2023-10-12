@@ -7,25 +7,19 @@ import io.cucumber.java.en.When;
 
 public class LogoutStepdefs {
     LogoutPage logoutPage = new LogoutPage();
-
     @Given("Hover over  on My Account")
     public void hoverOverOnMyAccount() {
         logoutPage.hoverover();
     }
-
-
-
     @Then("Verify that you are logged out")
     public void verifyThatYouAreLoggedOut() {
         logoutPage.hoverover();
         logoutPage.msg();
     }
-
     @Then("Click Back to page icon in browser")
     public void clickBackToPageIconInBrowser() {
         logoutPage.navigateback();
     }
-
     @When("Click on the Log out")
     public void clickOnTheLogOut() {
         logoutPage.logOut();
