@@ -1,15 +1,13 @@
 package com.pages;
 
-import com.utilities.BrowserUtils;
 import com.utilities.Driver;
-import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+
 public class AdressBookPage extends BasePage {
-   
+
     @FindBy(css = "[href=\"/customer/info\"]")
     public WebElement MyAccountTab;
     @FindBy(xpath = "//*[@id=\"block-account-navigation\"]/ul/li[2]/a/span")
@@ -34,6 +32,8 @@ public class AdressBookPage extends BasePage {
     public WebElement SaveButton;
     @FindBy(xpath = "//*[@id=\"customerAccount\"]/div/div/div[2]/div/div/div/div[1]")
     public WebElement VerifyMsg;
+    @FindBy(xpath = "//*[@id=\"customerAccount\"]/div/div/div[2]/form/div/div[1]/div/div[5]/span")
+    public WebElement ErrorMsg;
     @FindBy(css = "[class=\"fl col-12 Delete\"]")
     public WebElement Delete;
 
@@ -45,13 +45,10 @@ public class AdressBookPage extends BasePage {
         Adresses.click();
     }
 
-    public void newaddressadd(String EMail, String Name, String LastName,  String Adress, String Phone, String ZipCode) {
-
+    public void newaddressadd(String EMail, String Name, String LastName, String Adress, String Phone, String ZipCode) {
         EmailCredantial.sendKeys(EMail);
         NameCredantial.sendKeys(Name);
         LastNameCredantial.sendKeys(LastName);
-//       Select select = new Select(CountryCredantial);
-//        select.selectByVisibleText(Country);
         WebDriver driver = Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,700);");
@@ -61,7 +58,6 @@ public class AdressBookPage extends BasePage {
         jss.executeScript("window.scrollBy(0,200);");
         ZipCodeCredantial.sendKeys(ZipCode);
         SaveButton.click();
-       // WebElement popupElement=driver.findElement(By)
     }
 
 }
