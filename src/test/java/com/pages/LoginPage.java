@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
 
     //Aşağıdaki web element Pasaport veya Şifre yanlış girildiğinde hata vermediğinden hala Login olunmadığını
     //kanıtlamak için!!! Eğer logoutButton var ise zaten login olunmuştur.
-    @FindBy(xpath="//*[@id=\"userBox\"]/div/div[2]/a[3]")
+    @FindBy(xpath = "//*[@id=\"userBox\"]/div/div[2]/a[3]")
     public WebElement logoutButton;
 
     public void loginMethod() {
@@ -46,22 +46,24 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitFor(1);
         anmeldenButton.click();
 
-
         loginVerification();
     }
-    public void loginNegativTest(String Email, String Password){
+
+    public void loginNegativTest(String Email, String Password) {
         userName.sendKeys(Email);
         password.sendKeys(Password);
         BrowserUtils.waitFor(1);
         anmeldenButton.click();
     }
-    public void loginVerification(){
+
+    public void loginVerification() {
         userBox.click();
         BrowserUtils.verifyElementDisplayed(logoutButton);
     }
-    public void loginErrorMessage(){
-        userBox.click();
-        BrowserUtils.verifyElementDisplayed(logoutButton);
 
+    public void loginErrorMessage() {
+        //Eğer Password giriş kutusu görünüyorsa login olunmamış demektir.
+        //Error mesaj hiçbir şekilde alınmıyor.
+        BrowserUtils.verifyElementDisplayed(password);
     }
 }
