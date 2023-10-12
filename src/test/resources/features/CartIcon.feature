@@ -1,4 +1,4 @@
-
+@B7KCLS-113
 Feature: As a user, I should be able to manage the cart by clicking the cart icon
 
   Background: Login with username and password (!! This Scenario is for common usage !!)

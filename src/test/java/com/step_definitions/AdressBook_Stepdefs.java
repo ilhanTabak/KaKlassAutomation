@@ -17,10 +17,7 @@ public class AdressBook_Stepdefs {
     @Then("Click to My Account Tab")
     public void clickToMyAccountTab() {
         adressBookPage.myAdressBookmthd();
-
-
     }
-
 
     @And("Click the Addresses icon")
     public void clickTheAddressesIcon() {
@@ -39,21 +36,17 @@ public class AdressBook_Stepdefs {
 
     @And("The user should be see {string},")
     public void theUserShouldBeSee(String Verify_Message) {
-
         Assert.assertEquals(adressBookPage.VerifyMsg.getText(), Verify_Message);
         adressBookPage.Delete.click();
         BrowserUtils.waitFor(2);
         WebDriver driver = Driver.get();
         Alert alert = driver.switchTo().alert();
         alert.accept();
-
-
     }
 
     @And("The user should be displayed {string},")
     public void theUserShouldBeDisplayed(String Error_Message) {
         Assert.assertEquals(adressBookPage.ErrorMsg.getText(), Error_Message);
-       // adressBookPage.Delete.click();
         logoutPage.navigateback();
         logoutPage.navigateback();
     }

@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends BasePage {
-
-    
     WebDriver driver;
     @FindBy(xpath = "//a[@id=\"64d943d5db5ea1d2fa4aa00f-menu\"]")
     public WebElement Alle_Produkte;
@@ -34,28 +32,19 @@ public class CartPage extends BasePage {
     @FindBy(css = "[onclick='DeleteShopItem(this);']")
     public WebElement Remove;
 
-
     public void clickAlleProduckt() {
         Alle_Produkte.click();
     }
 
     public void chooseeaddcheck() {
-
-
-
-
-
-        
         driver = Driver.get();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,700);");
         AddProduct.click();
-
         BrowserUtils.waitFor(2);
         SizeAdd.click();
         BrowserUtils.waitFor(2);
         AddtoCart.click();
-
     }
 
     public void msg() {
@@ -65,12 +54,10 @@ public class CartPage extends BasePage {
         Assert.assertEquals(actuelText, expectedText);
         BrowserUtils.waitFor(2);
         Löschen.click();
-
     }
 
     public void cartview() {
         CartIcon_Tikla.click();
-
     }
 
     public void cartviewText() {
@@ -87,7 +74,6 @@ public class CartPage extends BasePage {
         BrowserUtils.waitFor(2);
         Assert.assertEquals(actuelText, expectedText);
         BrowserUtils.waitFor(2);
-
     }
 
     public void complete_Checkout() {
