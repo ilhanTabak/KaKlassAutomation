@@ -28,6 +28,6 @@ Feature: As a user I should be able to search in the search engine
       | Poloshirts   |
       | Sportschuhe  |
       | Krawatte     |
-      | Guertel      |
+      | Hut          |
 
 
