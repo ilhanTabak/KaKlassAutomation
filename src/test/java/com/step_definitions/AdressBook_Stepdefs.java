@@ -1,6 +1,7 @@
 package com.step_definitions;
 
 import com.pages.AdressBookPage;
+import com.pages.LogoutPage;
 import com.utilities.BrowserUtils;
 import com.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AdressBook_Stepdefs {
     AdressBookPage adressBookPage = new AdressBookPage();
+    LogoutPage logoutPage = new LogoutPage();
 
     @Then("Click to My Account Tab")
     public void clickToMyAccountTab() {
@@ -46,6 +48,14 @@ public class AdressBook_Stepdefs {
         alert.accept();
 
 
+    }
+
+    @And("The user should be displayed {string},")
+    public void theUserShouldBeDisplayed(String Error_Message) {
+        Assert.assertEquals(adressBookPage.ErrorMsg.getText(), Error_Message);
+       // adressBookPage.Delete.click();
+        logoutPage.navigateback();
+        logoutPage.navigateback();
     }
 }
 

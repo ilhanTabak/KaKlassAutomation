@@ -34,6 +34,8 @@ public class AdressBookPage extends BasePage {
     public WebElement SaveButton;
     @FindBy(xpath = "//*[@id=\"customerAccount\"]/div/div/div[2]/div/div/div/div[1]")
     public WebElement VerifyMsg;
+    @FindBy(xpath = "//*[@id=\"customerAccount\"]/div/div/div[2]/form/div/div[1]/div/div[5]/span")
+    public WebElement ErrorMsg;
     @FindBy(css = "[class=\"fl col-12 Delete\"]")
     public WebElement Delete;
 
