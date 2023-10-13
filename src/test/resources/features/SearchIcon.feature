@@ -1,3 +1,4 @@
+@smoke
 @B7KCLS-107
 Feature: As a user I should be able to search in the search engine
 
