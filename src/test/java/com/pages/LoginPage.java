@@ -23,8 +23,6 @@ public class LoginPage extends BasePage {
     public WebElement password;
     @FindBy(css = "[id='LoginBtn']")
     public WebElement anmeldenButton;
-    @FindBy(css = "[title='My Account']")
-    public WebElement meinKonto;
 
     //Aşağıdaki web element Pasaport veya Şifre yanlış girildiğinde hata vermediğinden hala Login olunmadığını
     //kanıtlamak için!!! Eğer logoutButton var ise zaten login olunmuştur.
